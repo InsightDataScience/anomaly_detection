@@ -107,6 +107,18 @@ Feel free to implement additional features that might be useful to derive furthe
 ## Download Data
 You can download the data here: https://drive.google.com/file/d/0B7-XWjN4ezogbUh6bUl1cV82Tnc/view
 
+## Input
+
+Ideally, payment data would come from a real-time, streaming API, but we don't want this challenge to focus on the relatively uninteresting "DevOps" of connecting to an API.
+
+As a result, you may assume that collecting the payments has been done for you and the data resides in two comma-delimited files in the paymo_input directory.
+
+The first file, batch_payment.txt, contains past data that can be used to track users who have previously paid one another. These transactions should be used to build the initial state of the entire user network.
+
+Data in the second file, stream_payment.txt should be used to determine whether there's a possibility of fraud and a warning should be triggered.
+
+You should assume that each new line of stream_payment.txt corresponds to a new, valid PayMo payment record -- regardless of being 'unverified' -- and design your program to handle a text file with a large number of payments.
+
 ## Description of Data
 
 Assume you receive as input, a file, `log.txt`, in ASCII format with one line per request, containing the following columns:
