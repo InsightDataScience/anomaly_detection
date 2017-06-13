@@ -41,7 +41,7 @@ As a result, you may assume that collecting the purchases and social network eve
 
 The first file, batch_log.json, contains past data that should be used to build the initial state of the entire user network as well as the purchase history of the users.
 
-Data in the second file, stream_log.json should be used to determine whether a purchase is anomalious. If a purchase is flagged anomalious the whole json record should be logged in the flagged_payments.json file. As events come in both the social network and the payment history of users gets updated.
+Data in the second file, stream_log.json should be used to determine whether a purchase is anomalious. If a purchase is flagged anomalious the whole json record should be logged in the flagged_purchases.json file. As events come in both the social network and the payment history of users gets updated.
 
 
 Both batch_log.json and stream_log.json contain 3 types of events:
@@ -52,23 +52,27 @@ Both batch_log.json and stream_log.json contain 3 types of events:
 Purchase events have a timestamp, user id and the amount payed. Befriend events represent two users becoming friends while unfriend events correspond to users deleting their connections (all friendships are considered bidirectional).
 
 e.g., `batch_log.json`:
-    {"event_type":"purchase", "timestamp":"2017-06-13 11:33:01", "id": "78", "amount": "16.83"}
-    {"event_type":"unfriend", "timestamp":"2017-06-13 11:33:01", "id1": "26", "id2": "50"}
-    {"event_type":"purchase", "timestamp":"2017-06-13 11:33:01", "id": "72", "amount": "59.28"}
-    {"event_type":"purchase", "timestamp":"2017-06-13 11:33:01", "id": "11", "amount": "11.20"}
-    {"event_type":"befriend", "timestamp":"2017-06-13 11:33:01", "id1": "26", "id2": "50"}
 
+    {"event_type":"purchase", "timestamp":"2017-06-13 11:33:01", "id": "1", "amount": "16.83"}
+    {"event_type":"unfriend", "timestamp":"2017-06-13 11:33:01", "id1": "1", "id2": "3"}
+    {"event_type":"purchase", "timestamp":"2017-06-13 11:33:01", "id": "1", "amount": "59.28"}
+    {"event_type":"purchase", "timestamp":"2017-06-13 11:33:01", "id": "1", "amount": "11.20"}
+    {"event_type":"befriend", "timestamp":"2017-06-13 11:33:01", "id1": "1", "id2": "2"}
 
-### Feature 1 
+e.g., `stream_log.json`:
+
+    {"event_type":"purchase", "timestamp":"2017-06-13 11:33:02", "id": "2", "amount": "1601.83"}
+    …
+    
+
+### Output Data
 List in descending order the top 10 most active hosts/IP addresses that have accessed the site.
 
-Write to a file, named `hosts.txt`, the 10 most active hosts/IP addresses in descending order and how many times they have accessed any part of the site. There should be at most 10 lines in the file, and each line should include the host (or IP address) followed by a comma and then the number of times it accessed the site. 
+Write to a file, named `flagged_purchases.json`, all the anomalious purhcase events (in their original order).
 
-e.g., `hosts.txt`:
+e.g., `flagged_purchases.json`:
 
-    example.host.com,1000000
-    another.example.net,800000
-    31.41.59.26,600000
+    {"event_type":"purchase", "timestamp":"2017-06-13 11:33:02", "id": "2", "amount": "1601.83"}
     …
 
 ### Additional Features
