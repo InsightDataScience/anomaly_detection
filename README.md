@@ -33,6 +33,17 @@ For simplicity we can assume that the meand and standard deviation of the transa
 FORMULA - MEAN
 FORMULA - STD
 
+### Input Data
+
+Ideally, the input data would come from a real-time, streaming API, but we don't want this challenge to focus on the relatively uninteresting "DevOps" of connecting to an API.
+
+As a result, you may assume that collecting the transactions and social network events has been done for you and the data resides in two files (in the log_input directory) which we can replay to mimic the data stream.
+
+The first file, batch_log.json, contains past data that should be used to build the initial state of the entire user network as well as the transaction history of the users.
+
+Data in the second file, stream_log.json should be used to determine whether a transaction is anomalious. If a transaction is flagged anomalious the whole json record should be logged in the flagged_payments.json file. As events come in both the social network and the payment history of users gets updated.
+
+
 
 
 
