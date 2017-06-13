@@ -41,7 +41,7 @@ As a result, you may assume that collecting the purchases and social network eve
 
 The first file, batch_log.json, contains past data that should be used to build the initial state of the entire user network as well as the purchase history of the users.
 
-Data in the second file, stream_log.json should be used to determine whether a purchase is anomalious. If a purchase is flagged anomalious the whole json record should be logged in the flagged_purchases.json file. As events come in both the social network and the payment history of users gets updated.
+Data in the second file, stream_log.json should be used to determine whether a purchase is anomalious. If a purchase is flagged anomalious the whole json record should be logged in the flagged_purchases.json file. As events come in both the social network and the purchase history of users gets updated.
 
 
 Both batch_log.json and stream_log.json contain 3 types of events:
@@ -75,24 +75,17 @@ e.g., `flagged_purchases.json`:
     …
 
 ### Parameters
-
 D and T should be parameters of your solution that can be set in your run.sh - as outlined in the provided example under /src.
-
-### Additional Features
-
-### Other considerations and optional features
-It's critical that these features don't take too long to run. For example, if it took too long to detect three failed login attempts, further traffic from the same IP address couldn’t be blocked immediately, and that would present a security breach.
-This dataset is inspired by real NASA web traffic, which is very similar to server logs from e-commerce and other sites. Monitoring web traffic and providing these analytics is a real business need, but it’s not the only thing you can do with the data. Feel free to implement additional features that you think might be useful.
-
-Feel free to implement additional features that might be useful to derive further metrics or prevent harmful activity. These features will be considered as bonus while evaluating your submission. If you choose to add extras please document them in your README and make sure that they don't interfere with the above four (e.g. don't alter the output of the four core features).
-
-We also want to see how you use your programming skills to solve business problems. At a minimum, you should implement the four required features, but feel free to expand upon this challenge or add other features you think would prevent fraud and further business goals. Be sure to document these add-ons so we know to look for them.
 
 ## Download Data
 You can download a medium sized sample data set here: 
 
+### Other considerations and optional features
+It's critical that this feature doesn't take too long to run. For example, if it took too long to detect 
 
+Monitoring web traffic and providing these analytics is a real business need, but it’s not the only thing you can do with the data. Feel free to implement additional features that you think might be useful.
 
+Feel free to implement additional features that might be useful to derive further metrics or prevent harmful activity. These features will be considered as bonus while evaluating your submission. If you choose to add extras please document them in your README and make sure that they don't interfere with the above (e.g. don't alter the output of the core feature).
 
 ## Writing clean, scalable, and well-tested code
 
@@ -151,19 +144,13 @@ You can run the test with the following from the `insight_testsuite` folder:
 
 On a failed test, the output of `run_tests.sh` should look like:
 
-    [FAIL]: test_features (hosts.txt)
-    [FAIL]: test_features (resources.txt)
-    [PASS]: test_features (hours.txt)
     [FAIL]: test_features (blocked.txt)
-    [Thu Mar 30 16:28:01 PDT 2017] 1 of 4 tests passed
+    [Thu Mar 30 16:28:01 PDT 2017] 0 of 1 tests passed
 
 On success:
 
-    [PASS]: test_features (hosts.txt)
-    [PASS]: test_features (resources.txt)
-    [PASS]: test_features (hours.txt)
     [PASS]: test_features (blocked.txt)
-    [Thu Mar 30 16:25:57 PDT 2017] 4 of 4 tests passed
+    [Thu Mar 30 16:25:57 PDT 2017] 1 of 1 tests passed
 
 
 
