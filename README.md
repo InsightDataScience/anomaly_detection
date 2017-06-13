@@ -128,7 +128,7 @@ The contents of `src` do not have to contain a single file called `process_log.p
 
 To make sure that your code has the correct directory structure and the format of the output files are correct, we included a test script, called `run_tests.sh` in the `insight_testsuite` folder.
 
-The tests are stored simply as text files under the `insight_testsuite/tests` folder. Each test should have a separate folder and within should have a `log_input` folder for `log.txt` and a `log_output` folder for outputs corresponding to the current test.
+The tests are stored simply as text files under the `insight_testsuite/tests` folder. Each test should have a separate folder and within should have a `log_input` folder for `batch_log.json` and `stream_log.json` and a `log_output` folder for output corresponding to the current test.
 
 You can run the test with the following from the `insight_testsuite` folder:
 
