@@ -12,7 +12,7 @@
 
 # Challenge Summary
 
-Picture yourself as a backend engineer of Market-ter, an e-commerce website where besides shopping users can build their social network and get recommendations based on what their friends are buying. Your challenge is to build a streaming application which flags anomalious user purchases.
+Picture yourself as a backend engineer of Market-ter, an e-commerce website where besides shopping users can build their social network and get recommendations based on what their friends are buying. Your challenge is to build a streaming application which flags anomalious purchases.
 
 ## Details of Implementation
 With this coding challenge, you should demonstrate a strong understanding of computer science fundamentals. We won't be wowed by your knowledge of various available software libraries, but will be impressed by your ability to pick and use the best data structures and algorithms for the job.
@@ -22,11 +22,11 @@ We're looking for clean, well-thought-out code that correctly implements the des
 
 ### Anomalious user purchases
 
-A user purchase is considered anomalious if the amount spent is higher than the `mean+3*sd` of the last T purchases in the user’s D^th degree social network.
+A user purchase is considered anomalious if the amount spent is higher than the `mean+3*sd` of the last T purchases in the user’s Dth degree social network.
 
-D >= 1: D=1 means that we consider only the friends of the user, D=2 corresponds to friends and friend of friends, and so forth so on
+D >= 1: D=1 means that we consider only the friends of the user, D=2 corresponds to friends and friends of friends, and so on so forth
 
-T >= 2: the last T purchases are the T purchases in the user's network (not including the user's own purchases) with the highest timestamps (if two events have the same timestamp the one entering the system first is considered to be earlier). If there is 0, 1 purchases in the user's network we don't have enough information to detect the anomlay so the purchase shouldn't be flagged. If the user's netwrok has at least 2 but not T purhcases so far than the calculation should be done using the current number of purchases.
+T >= 2: the last T purchases are the T purchases in the user's network (not including the user's own purchases) with the highest timestamps (if two events have the same timestamp the one entering the system first is considered to be earlier). If there is 0 or 1 purchase in the user's network we don't have enough information to detect the anomlay so the purchase shouldn't be flagged. If the user's netwrok has at least 2 but not T purhcases so far than the calculation should be done using the current number of purchases.
 
 For simplicity we can assume that the meand and standard deviation of the purchase amounts can be calculated based on the formulas below:
 
@@ -41,8 +41,7 @@ As a result, you may assume that collecting the purchases and social network eve
 
 The first file, batch_log.json, contains past data that should be used to build the initial state of the entire user network as well as the purchase history of the users.
 
-Data in the second file, stream_log.json should be used to determine whether a purchase is anomalious. If a purchase is flagged anomalious the whole json record should be logged in the flagged_purchases.json file. As events come in both the social network and the purchase history of users gets updated.
-
+Data in the second file, stream_log.json should be used to determine whether a purchase is anomalious. If a purchase is flagged anomalious the whole json record should be logged in the flagged_purchases.json file. As events come in both the social network and the purchase history of users get updated.
 
 Both batch_log.json and stream_log.json contain 3 types of events:
  - purchase
@@ -62,22 +61,20 @@ e.g., `batch_log.json`:
 e.g., `stream_log.json`:
 
     {"event_type":"purchase", "timestamp":"2017-06-13 11:33:02", "id": "2", "amount": "1601.83"}
-    …
 
 ### Output Data
 List in descending order the top 10 most active hosts/IP addresses that have accessed the site.
 
-Write to a file, named `flagged_purchases.json`, all the anomalious purhcase events (in their original order).
+Write to a file, named `flagged_purchases.json`, all the anomalious purhcase events (in their original order). Flagged events are still valid and can contribute to other users' baseline.
 
 e.g., `flagged_purchases.json`:
 
     {"event_type":"purchase", "timestamp":"2017-06-13 11:33:02", "id": "2", "amount": "1601.83"}
-    …
 
 ### Parameters
 D and T should be parameters of your solution that can be set in your run.sh - as outlined in the provided example under /src.
 
-## Download Data
+### Sample Data
 You can download a medium sized sample data set here: 
 
 ### Other considerations and optional features
