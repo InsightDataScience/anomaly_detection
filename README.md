@@ -17,7 +17,7 @@ Picture yourself as a backend engineer of Market-ter, an e-commerce website wher
 ## Details of Implementation
 With this coding challenge, you should demonstrate a strong understanding of computer science fundamentals. We won't be wowed by your knowledge of various available software libraries, but will be impressed by your ability to pick and use the best data structures and algorithms for the job.
 
-We're looking for clean, well-thought-out code that correctly implements the desired features in an optimized way and highlights your ability to write production-quality code.
+We're looking for clean, well-thought-out code that correctly implements the desired feature in an optimized way and highlights your ability to write production-quality code and clear documentation.
 
 
 ### Anomalious user purchases
@@ -31,10 +31,10 @@ T >= 2: the last T purchases are the T purchases in the user's network (not incl
 For simplicity we can assume that the meand and standard deviation of the purchase amounts can be calculated based on the formulas below:
 
 FORMULA - MEAN
+
 FORMULA - STD
 
 ### Input Data
-
 Ideally, the input data would come from a real-time, streaming API, but we don't want this challenge to focus on the relatively uninteresting "DevOps" of connecting to an API.
 
 As a result, you may assume that collecting the purchases and social network events has been done for you and the data resides in two files (in the log_input directory) which we can replay to mimic the data stream.
@@ -63,7 +63,6 @@ e.g., `stream_log.json`:
 
     {"event_type":"purchase", "timestamp":"2017-06-13 11:33:02", "id": "2", "amount": "1601.83"}
     …
-    
 
 ### Output Data
 List in descending order the top 10 most active hosts/IP addresses that have accessed the site.
@@ -74,6 +73,10 @@ e.g., `flagged_purchases.json`:
 
     {"event_type":"purchase", "timestamp":"2017-06-13 11:33:02", "id": "2", "amount": "1601.83"}
     …
+
+### Parameters
+
+D and T should be parameters of your solution that can be set in your run.sh - as outlined in the provided example under /src.
 
 ### Additional Features
 
@@ -86,42 +89,10 @@ Feel free to implement additional features that might be useful to derive furthe
 We also want to see how you use your programming skills to solve business problems. At a minimum, you should implement the four required features, but feel free to expand upon this challenge or add other features you think would prevent fraud and further business goals. Be sure to document these add-ons so we know to look for them.
 
 ## Download Data
-You can download the data here: 
-
-## Input Data
-
-Ideally, payment data would come from a real-time, streaming API, but we don't want this challenge to focus on the relatively uninteresting "DevOps" of connecting to an API.
-
-As a result, you may assume that collecting the payments has been done for you and the data resides in two comma-delimited files in the paymo_input directory.
-
-The first file, batch_payment.txt, contains past data that can be used to track users who have previously paid one another. These transactions should be used to build the initial state of the entire user network.
-
-Data in the second file, stream_payment.txt should be used to determine whether there's a possibility of fraud and a warning should be triggered.
-
-You should assume that each new line of stream_payment.txt corresponds to a new, valid PayMo payment record -- regardless of being 'unverified' -- and design your program to handle a text file with a large number of payments.
-
-## Description of Data
-
-Assume you receive as input, a file, `log.txt`, in ASCII format with one line per request, containing the following columns:
-
-* **host** making the request. A hostname when possible, otherwise the Internet address if the name could not be looked up.
-
-* **timestamp** in the format `[DD/MON/YYYY:HH:MM:SS -0400]`, where DD is the day of the month, MON is the abbreviated name of the month, YYYY is the year, HH:MM:SS is the time of day using a 24-hour clock. The timezone is -0400.
-
-* **request** given in quotes.
-
-* **HTTP reply code**
-
-* **bytes** in the reply. Some lines in the log file will list `-` in the bytes field. For the purposes of this challenge, that should be interpreted as 0 bytes.
+You can download a medium sized sample data set here: 
 
 
-e.g., `log.txt`
-  {"event_type":"befriend", "timestamp":"2017-06-13 00:49:31", "id1": "47", "id2": "82"}
-  {"event_type":"payment", "timestamp":"2017-06-13 00:49:31", "id": "96", "amount": "9.78"}
-  {"event_type":"unfriend", "timestamp":"2017-06-13 00:49:31", "id1": "65", "id2": "31"}
-    ...
-    
-In the above example, the 2nd line shows a failed login (HTTP reply code of 401) followed by a successful login (HTTP reply code of 200) two seconds later from the same IP address.
+
 
 ## Writing clean, scalable, and well-tested code
 
@@ -146,24 +117,26 @@ The directory structure for your repo should look like this:
     ├── src
     │   └── process_log.py
     ├── log_input
-    │   └── log.txt
+    │   └── batch_log.json
+    │   └── stream_log.json
     ├── log_output
-    |   └── hosts.txt
+    |   └── flagged_purchases.json
     ├── insight_testsuite
         └── run_tests.sh
         └── tests
-            └── test_features
+            └── test_1
             |   ├── log_input
-            |   │   └── log.txt
+            |   │   └── batch_log.json
+            |   │   └── stream_log.json
             |   |__ log_output
-            |   │   └── hosts.txt
+            |   │   └── flagged_purchases.json
             ├── your-own-test
                 ├── log_input
                 │   └── your-own-log.txt
                 |__ log_output
-                    └── hosts.txt
+                    └── flagged_purchases.json
 
-You simply clone this repo, but <b>please don't fork</b> it.
+<b>Please don't fork</b> our repo and don't use this ReadMe instead of your own.
 The contents of `src` do not have to contain a single file called `process_log.py`, you are free to include one or more files and name them as you wish.
 
 ## Testing your directory structure and output format
