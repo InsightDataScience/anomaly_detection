@@ -41,7 +41,7 @@ As a result, you may assume that collecting the purchases and social network eve
 
 The first file, batch_log.json, contains past data that should be used to build the initial state of the entire user network as well as the purchase history of the users.
 
-Data in the second file, stream_log.json should be used to determine whether a purchase is anomalious. If a purchase is flagged anomalious the whole json record should be logged in the flagged_purchases.json file. As events come in both the social network and the purchase history of users get updated.
+Data in the second file, stream_log.json, should be used to determine whether a purchase is anomalious. If a purchase is flagged anomalious the whole json record should be logged in the flagged_purchases.json file. As events come in both the social network and the purchase history of users get updated.
 
 Both batch_log.json and stream_log.json contain 3 types of events:
  - purchase
@@ -63,8 +63,6 @@ e.g., `stream_log.json`:
     {"event_type":"purchase", "timestamp":"2017-06-13 11:33:02", "id": "2", "amount": "1601.83"}
 
 ### Output Data
-List in descending order the top 10 most active hosts/IP addresses that have accessed the site.
-
 Write to a file, named `flagged_purchases.json`, all the anomalious purhcase events (in their original order). Flagged events are still valid and can contribute to other users' baseline.
 
 e.g., `flagged_purchases.json`:
@@ -72,17 +70,13 @@ e.g., `flagged_purchases.json`:
     {"event_type":"purchase", "timestamp":"2017-06-13 11:33:02", "id": "2", "amount": "1601.83"}
 
 ### Parameters
-D and T should be parameters of your solution that can be set in your run.sh - as outlined in the provided example under /src.
+D and T separate file or first line in batch_log.json ???
 
 ### Sample Data
-You can download a medium sized sample data set here: 
+You can download a medium sized sample data set here: XXX
 
-### Other considerations and optional features
-It's critical that this feature doesn't take too long to run. For example, if it took too long to detect 
-
-Monitoring web traffic and providing these analytics is a real business need, but it’s not the only thing you can do with the data. Feel free to implement additional features that you think might be useful.
-
-Feel free to implement additional features that might be useful to derive further metrics or prevent harmful activity. These features will be considered as bonus while evaluating your submission. If you choose to add extras please document them in your README and make sure that they don't interfere with the above (e.g. don't alter the output of the core feature).
+### Optional features
+Feel free to implement additional features that might be useful to derive further metrics or prevent harmful activity. These features will be considered as bonus while evaluating your submission. If you choose to add extras please document them in your `README` and make sure that they don't interfere with the core feature (e.g. don't alter the output of flagged_purchases.json).
 
 ## Writing clean, scalable, and well-tested code
 
@@ -92,9 +86,10 @@ For example, your solution should be able to account for a large number of event
 
 It's also important to use software engineering best practices like unit tests, especially since public data is not clean and predictable. For more details about the implementation, please refer to the FAQ below. If further clarification is necessary, email us at <cc@insightdataengineering.com>
 
+Before submitting your solution you should summerize your approach, dependencies and run instructions (if any) in your `README`.  
 You may write your solution in any mainstream programming language such as C, C++, C#, Clojure, Erlang, Go, Haskell, Java, Python, Ruby, or Scala. Once completed, submit a link to a Github repo with your source code.
 
-In addition to the source code, the top-most directory of your repo must include the `log_input` and `log_output` directories, and a shell script named `run.sh` that compiles and runs the program(s) that implement these features.
+In addition to the source code, the top-most directory of your repo must include the `log_input` and `log_output` directories, and a shell script named `run.sh` that compiles and runs the program(s) that implement the required feature.
 
 If your solution requires additional libraries, environments, or dependencies, you must specify these in your `README` documentation. See the figure below for the required structure of the top-most directory in your repo, or simply clone this repo.
 
@@ -126,7 +121,7 @@ The directory structure for your repo should look like this:
                 |__ log_output
                     └── flagged_purchases.json
 
-<b>Please don't fork</b> our repo and don't use this ReadMe instead of your own.
+<b>Please don't fork</b> our repo and don't use this `README` instead of your own.
 The contents of `src` do not have to contain a single file called `process_log.py`, you are free to include one or more files and name them as you wish.
 
 ## Testing your directory structure and output format
