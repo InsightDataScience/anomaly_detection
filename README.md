@@ -12,13 +12,15 @@
 
 # Challenge Summary
 
-Picture yourself as a backend engineer of Market-ter, an e-commerce website where besides shopping users can build their social network and get recommendations based on what their friends are buying. Your challenge is to build an applications to flag anomalious user transactions.
+Picture yourself as a backend engineer of Market-ter, an e-commerce website where besides shopping users can build their social network and get recommendations based on what their friends are buying. Your challenge is to build a streaming application which flags anomalious user transactions (where the amount spent is higher than the mean+3*stdev of the last T transactions in the user’s D degree social network).
 
 
-The desired features are described below: 
 
-### Feature 1: 
-List the top 10 most active host/IP addresses that have accessed the site.
+Mean and stdev: don’t include the user’s own spending
+T >= 2, D >= 1
+If someone doesn’t have a network with at least 2 transactions - then don’t alert on them
+Social_network events don’t trigger any response.
+
 
 
 ### Other considerations and optional features
@@ -49,9 +51,9 @@ e.g., `hosts.txt`:
 Feel free to implement additional features that might be useful to derive further metrics or prevent harmful activity. These features will be considered as bonus while evaluating your submission. If you choose to add extras please document them in your README and make sure that they don't interfere with the above four (e.g. don't alter the output of the four core features).
 
 ## Download Data
-You can download the data here: https://drive.google.com/file/d/0B7-XWjN4ezogbUh6bUl1cV82Tnc/view
+You can download the data here: 
 
-## Input
+## Input Data
 
 Ideally, payment data would come from a real-time, streaming API, but we don't want this challenge to focus on the relatively uninteresting "DevOps" of connecting to an API.
 
@@ -112,9 +114,6 @@ The directory structure for your repo should look like this:
     │   └── log.txt
     ├── log_output
     |   └── hosts.txt
-    |   └── hours.txt
-    |   └── resources.txt
-    |   └── blocked.txt
     ├── insight_testsuite
         └── run_tests.sh
         └── tests
@@ -123,17 +122,11 @@ The directory structure for your repo should look like this:
             |   │   └── log.txt
             |   |__ log_output
             |   │   └── hosts.txt
-            |   │   └── hours.txt
-            |   │   └── resources.txt
-            |   │   └── blocked.txt
             ├── your-own-test
                 ├── log_input
                 │   └── your-own-log.txt
                 |__ log_output
                     └── hosts.txt
-                    └── hours.txt
-                    └── resources.txt
-                    └── blocked.txt
 
 You simply clone this repo, but <b>please don't fork</b> it.
 The contents of `src` do not have to contain a single file called `process_log.py`, you are free to include one or more files and name them as you wish.
