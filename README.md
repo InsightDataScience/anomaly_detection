@@ -12,27 +12,29 @@
 
 # Challenge Summary
 
-Picture yourself as a backend engineer of Market-ter, an e-commerce website where besides shopping users can build their social network and get recommendations based on what their friends are buying. Your challenge is to build a streaming application which flags anomalious user transactions (where the amount spent is higher than the mean+3*stdev of the last T transactions in the user’s D degree social network).
-
-
-
-Mean and stdev: don’t include the user’s own spending
-T >= 2, D >= 1
-If someone doesn’t have a network with at least 2 transactions - then don’t alert on them
-Social_network events don’t trigger any response.
-
-
-
-### Other considerations and optional features
-It's critical that these features don't take too long to run. For example, if it took too long to detect three failed login attempts, further traffic from the same IP address couldn’t be blocked immediately, and that would present a security breach.
-This dataset is inspired by real NASA web traffic, which is very similar to server logs from e-commerce and other sites. Monitoring web traffic and providing these analytics is a real business need, but it’s not the only thing you can do with the data. Feel free to implement additional features that you think might be useful.
+Picture yourself as a backend engineer of Market-ter, an e-commerce website where besides shopping users can build their social network and get recommendations based on what their friends are buying. Your challenge is to build a streaming application which flags anomalious user transactions.
 
 ## Details of Implementation
 With this coding challenge, you should demonstrate a strong understanding of computer science fundamentals. We won't be wowed by your knowledge of various available software libraries, but will be impressed by your ability to pick and use the best data structures and algorithms for the job.
 
 We're looking for clean, well-thought-out code that correctly implements the desired features in an optimized way and highlights your ability to write production-quality code.
 
-We also want to see how you use your programming skills to solve business problems. At a minimum, you should implement the four required features, but feel free to expand upon this challenge or add other features you think would prevent fraud and further business goals. Be sure to document these add-ons so we know to look for them.
+
+### Anomalious user transactions
+
+A user transaction is considered anomalious if the amount spent is higher than the `mean+3*sd` of the last T transactions in the user’s D^th degree social network.
+
+D >= 1: D=1 means that we consider only the friends of the user, D=2 corresponds to friends and friend of friends, and so forth so on
+
+T >= 2: the last T transactions are the T transactions in the user's network (not including the user's own transactions) with the highest timestamps (if two events have the same timestamp the one entering the system first is considered to be earlier)
+
+For simplicity we can assume that the meand and standard deviation of the transaction amounts can be calculated based on the formulas below:
+
+FORMULA - MEAN
+FORMULA - STD
+
+
+
 
 ### Feature 1 
 List in descending order the top 10 most active hosts/IP addresses that have accessed the site.
@@ -48,7 +50,13 @@ e.g., `hosts.txt`:
 
 ### Additional Features
 
+### Other considerations and optional features
+It's critical that these features don't take too long to run. For example, if it took too long to detect three failed login attempts, further traffic from the same IP address couldn’t be blocked immediately, and that would present a security breach.
+This dataset is inspired by real NASA web traffic, which is very similar to server logs from e-commerce and other sites. Monitoring web traffic and providing these analytics is a real business need, but it’s not the only thing you can do with the data. Feel free to implement additional features that you think might be useful.
+
 Feel free to implement additional features that might be useful to derive further metrics or prevent harmful activity. These features will be considered as bonus while evaluating your submission. If you choose to add extras please document them in your README and make sure that they don't interfere with the above four (e.g. don't alter the output of the four core features).
+
+We also want to see how you use your programming skills to solve business problems. At a minimum, you should implement the four required features, but feel free to expand upon this challenge or add other features you think would prevent fraud and further business goals. Be sure to document these add-ons so we know to look for them.
 
 ## Download Data
 You can download the data here: 
