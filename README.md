@@ -72,9 +72,6 @@ e.g., `flagged_purchases.json`:
 
     {"event_type":"purchase", "timestamp":"2017-06-13 11:33:02", "id": "2", "amount": "1601.83"}
 
-### Parameters
-D and T separate file or first line in batch_log.json ???
-
 ### Sample Data
 You can download a medium sized sample data set here: XXX
 
