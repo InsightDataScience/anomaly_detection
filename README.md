@@ -1,12 +1,12 @@
 # Table of Contents
 1. [Challenge Summary](README.md#challenge-summary)
 2. [Details of Implementation](README.md#details-of-implementation)
-3. [Anomalous purchases](README.md#anomalous-purchases)
+3. [Anomalous Purchases](README.md#anomalous-purchases)
 4. [Sample Data](README.md#sample-data)
-5. [Writing clean, scalable, and well-tested code](README.md#writing-clean-scalable-and-well-tested-code)
-6. [Repo directory structure](README.md#repo-directory-structure)
-7. [Testing your directory structure and output format](README.md#testing-your-directory-structure-and-output-format)
-8. [Instructions to submit your solution](README.md#instructions-to-submit-your-solution)
+5. [Writing Clean, Scalable, and Well-tested Code](README.md#writing-clean-scalable-and-well-tested-code)
+6. [Repo Directory Structure](README.md#repo-directory-structure)
+7. [Testing your Directory Structure and Output Format](README.md#testing-your-directory-structure-and-output-format)
+8. [Instructions to Submit your Solution](README.md#instructions-to-submit-your-solution)
 9. [FAQ](README.md#faq)
 
 
@@ -15,12 +15,11 @@
 Picture yourself as a backend engineer of Market-ter, an e-commerce website where besides shopping users can build their social network and get recommendations based on what their friends are buying. Your challenge is to build a streaming application which flags anomalous purchases.
 
 ## Details of Implementation
-With this coding challenge, you should demonstrate a strong understanding of computer science fundamentals. We won't be wowed by your knowledge of various available software libraries, but will be impressed by your ability to pick and use the best data structures and algorithms for the job.
+With this coding challenge, you should demonstrate a strong understanding of computer science fundamentals. We won't be wowed by your knowledge of various available software libraries but will be impressed by your ability to pick and use the best data structures and algorithms for the job.
 
 We're looking for clean, well-thought-out code that correctly implements the desired feature in an optimized way and highlights your ability to write production-quality code and clear documentation.
 
-
-### Anomalous purchases
+### Anomalous Purchases
 
 A user purchase is considered anomalous if the amount spent is higher than the `mean+3*sd` of the last T purchases in the user’s Dth degree social network.
 
@@ -49,7 +48,7 @@ The rest of the events both in batch_log.json and in stream_log.json fall into t
  - befriend
  - unfriend
  
-Purchase events have a timestamp, user id and the amount payed. Befriend events represent two users becoming friends while unfriend events correspond to users deleting their connections (all friendships are considered bidirectional).
+Purchase events have a timestamp, user id and the amount paid. Befriend events represent two users becoming friends while unfriend events correspond to users deleting their connections (all friendships are considered bidirectional).
 
 e.g., `batch_log.json`:
 
@@ -75,10 +74,10 @@ e.g., `flagged_purchases.json`:
 ### Sample Data
 You can download a medium sized sample data set here: XXX
 
-### Optional features
+### Optional Features
 Feel free to implement additional features that might be useful to derive further metrics or prevent harmful activity. These features will be considered as bonus while evaluating your submission. If you choose to add extras please document them in your `README` and make sure that they don't interfere with the core feature (e.g. don't alter the output of flagged_purchases.json).
 
-## Writing clean, scalable, and well-tested code
+## Writing Clean, Scalable, and Well-tested Code
 
 As a data engineer, it’s important that you write clean, well-documented code that scales for large amounts of data. For this reason, it’s important to ensure that your solution works well for a huge number of logged events, rather than just the simple examples above.
 
@@ -93,7 +92,7 @@ In addition to the source code, the top-most directory of your repo must include
 
 If your solution requires additional libraries, environments, or dependencies, you must specify these in your `README` documentation. See the figure below for the required structure of the top-most directory in your repo, or simply clone this repo.
 
-## Repo directory structure
+## Repo Directory Structure
 
 The directory structure for your repo should look like this:
 
@@ -124,7 +123,7 @@ The directory structure for your repo should look like this:
 <b>Please don't fork</b> our repo and don't use this `README` instead of your own.
 The contents of `src` do not have to contain a single file called `process_log.py`, you are free to include one or more files and name them as you wish.
 
-## Testing your directory structure and output format
+## Testing your Directory Structure and Output Format
 
 To make sure that your code has the correct directory structure and the format of the output files are correct, we included a test script, called `run_tests.sh` in the `insight_testsuite` folder.
 
@@ -150,7 +149,7 @@ One test has been provided as a way to check your formatting and simulate how we
 
 Your submission must pass at least the provided test in order to pass the coding challenge.
 
-## Instructions to submit your solution
+## Instructions to Submit your Solution
 * To submit your entry please use the link you receieved in your coding challenge invite email
 * You will only be able to submit through the link one time 
 * Do NOT attach a file - we will not admit solutions which are attached files 
