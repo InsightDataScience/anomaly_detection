@@ -43,7 +43,8 @@ The first file, batch_log.json, contains past data that should be used to build 
 
 Data in the second file, stream_log.json, should be used to determine whether a purchase is anomalious. If a purchase is flagged anomalious the whole json record should be logged in the flagged_purchases.json file. As events come in both the social network and the purchase history of users get updated.
 
-Both batch_log.json and stream_log.json contain 3 types of events:
+The first line of batch_log.json contains a json object with the degree (D) and number of purchases (T) to consider for the calculation.
+The rest of the events both in batch_log.json and in stream_log.json fall into to following 3 categories:
  - purchase
  - befriend
  - unfriend
@@ -52,6 +53,7 @@ Purchase events have a timestamp, user id and the amount payed. Befriend events 
 
 e.g., `batch_log.json`:
 
+    {"D":"3", "T":"50"}
     {"event_type":"purchase", "timestamp":"2017-06-13 11:33:01", "id": "1", "amount": "16.83"}
     {"event_type":"purchase", "timestamp":"2017-06-13 11:33:01", "id": "1", "amount": "59.28"}
     {"event_type":"befriend", "timestamp":"2017-06-13 11:33:01", "id1": "1", "id2": "2"}
