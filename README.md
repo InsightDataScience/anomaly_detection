@@ -136,12 +136,12 @@ You can run the test with the following from the `insight_testsuite` folder:
 
 On a failed test, the output of `run_tests.sh` should look like:
 
-    [FAIL]: test_features (blocked.txt)
+    [FAIL]: test_1
     [Thu Mar 30 16:28:01 PDT 2017] 0 of 1 tests passed
 
 On success:
 
-    [PASS]: test_features (blocked.txt)
+    [PASS]: test_1
     [Thu Mar 30 16:25:57 PDT 2017] 1 of 1 tests passed
 
 
