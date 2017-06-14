@@ -1,7 +1,7 @@
 # Table of Contents
 1. [Challenge Summary](README.md#challenge-summary)
 2. [Details of Implementation](README.md#details-of-implementation)
-3. [Anomalious purchases](README.md#anomalious-purchases)
+3. [Anomalous purchases](README.md#anomalous-purchases)
 4. [Sample Data](README.md#sample-data)
 5. [Writing clean, scalable, and well-tested code](README.md#writing-clean-scalable-and-well-tested-code)
 6. [Repo directory structure](README.md#repo-directory-structure)
@@ -12,7 +12,7 @@
 
 # Challenge Summary
 
-Picture yourself as a backend engineer of Market-ter, an e-commerce website where besides shopping users can build their social network and get recommendations based on what their friends are buying. Your challenge is to build a streaming application which flags anomalious purchases.
+Picture yourself as a backend engineer of Market-ter, an e-commerce website where besides shopping users can build their social network and get recommendations based on what their friends are buying. Your challenge is to build a streaming application which flags anomalous purchases.
 
 ## Details of Implementation
 With this coding challenge, you should demonstrate a strong understanding of computer science fundamentals. We won't be wowed by your knowledge of various available software libraries, but will be impressed by your ability to pick and use the best data structures and algorithms for the job.
@@ -20,15 +20,15 @@ With this coding challenge, you should demonstrate a strong understanding of com
 We're looking for clean, well-thought-out code that correctly implements the desired feature in an optimized way and highlights your ability to write production-quality code and clear documentation.
 
 
-### Anomalious purchases
+### Anomalous purchases
 
-A user purchase is considered anomalious if the amount spent is higher than the `mean+3*sd` of the last T purchases in the user’s Dth degree social network.
+A user purchase is considered anomalous if the amount spent is higher than the `mean+3*sd` of the last T purchases in the user’s Dth degree social network.
 
 D >= 1: D=1 means that we consider only the friends of the user, D=2 corresponds to friends and friends of friends, and so on so forth
 
-T >= 2: the last T purchases are the T purchases in the user's network (not including the user's own purchases) with the highest timestamps (if two events have the same timestamp the one entering the system first is considered to be earlier). If there is 0 or 1 purchase in the user's network we don't have enough information to detect the anomlay so the purchase shouldn't be flagged. If the user's netwrok has at least 2 but not T purhcases so far than the calculation should be done using the current number of purchases.
+T >= 2: the last T purchases are the T purchases in the user's network (not including the user's own purchases) with the highest timestamps (if two events have the same timestamp the one entering the system first is considered to be earlier). If there is 0 or 1 purchase in the user's network we don't have enough information to detect the anomaly so the purchase shouldn't be flagged. If the user's network has at least 2 but not T purchases so far than the calculation should be done using the current number of purchases.
 
-For simplicity we can assume that the meand and standard deviation of the purchase amounts can be calculated based on the formulas below:
+For simplicity we can assume that the mean and standard deviation of the purchase amounts can be calculated based on the formulas below:
 
 FORMULA - MEAN
 
@@ -41,7 +41,7 @@ As a result, you may assume that collecting the purchases and social network eve
 
 The first file, batch_log.json, contains past data that should be used to build the initial state of the entire user network as well as the purchase history of the users.
 
-Data in the second file, stream_log.json, should be used to determine whether a purchase is anomalious. If a purchase is flagged anomalious the whole json record should be logged in the flagged_purchases.json file. As events come in both the social network and the purchase history of users get updated.
+Data in the second file, stream_log.json, should be used to determine whether a purchase is anomalous. If a purchase is flagged anomalous the whole json record should be logged in the flagged_purchases.json file. As events come in both the social network and the purchase history of users get updated.
 
 The first line of batch_log.json contains a json object with the degree (D) and number of purchases (T) to consider for the calculation.
 The rest of the events both in batch_log.json and in stream_log.json fall into to following 3 categories:
