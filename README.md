@@ -172,13 +172,13 @@ No, you may use a public repo, there is no need to purchase a private repo. You 
 It's important that your implementation scales to handle large amounts of data. While many of our Fellows have experience with R and Matlab, applicants have found that these languages are unable to process data in a scalable fashion, so you should consider another language.
 
 ### May I use distributed technologies like Hadoop or Spark?
-Your code will be tested on a single machine so there may not be a significant benefit to using these technologies prior to the program. At this point we're not looking test you knowledge on distributed computing but rather on CS fundamentals and SE best practices. With that said, learning about distributed systems is a valuable skill for all data engineers.
+Your code will be tested on a single machine so there may not be a significant benefit to using these technologies prior to the program. At this point we're not looking to test your knowledge on distributed computing but rather on CS fundamentals and SE best practices. With that said, learning about distributed systems is a valuable skill for all data engineers.
 
 ### What sort of system should I use to run my program on (Windows, Linux, Mac)?
 You may write your solution on any system, but your source code should be portable and work on all systems. Additionally, your run.sh must be able to run on either Unix or Linux, as that's the system that will be used for testing. Linux machines are the industry standard for most data engineering teams, so it is helpful to be familiar with this. If you're currently using Windows, we recommend using tools like Cygwin or Docker, or a free online IDE such as Cloud9.
 
 ### How fast should my program run?
-While there are no strict performance guidelines to this coding challenge, we will take the amount of time your program takes into consideration in grading the challenge. Therefore, you should design and develop your program in the most optimal way (think about time and space complexity instead of trying to hit a concrete runtime value). 
+While there are no strict performance guidelines to this coding challenge, we will take the amount of time your program takes into consideration in grading the challenge. Therefore, you should design and develop your program in the most optimal way (think about time and space complexity instead of trying to hit a specific run time value). 
 
 ### Can I use pre-built packages, modules, or libraries?
 This coding challenge can be completed without any "exotic" packages. While you may use publicly available packages, modules, or libraries, you must document any dependencies in your accompanying README file. When we review your submission, we will download these libraries and attempt to run your program. If you do use a package, you should always ensure that the module you're using works efficiently for the specific use-case in the challenge, since many libraries are not designed for large amounts of data.
@@ -199,7 +199,7 @@ In order to be tested correctly, you must use the format described above. You ca
 No, for simplicity you may assume that all of the files in the input directory are text files, with the format as described above.
 
 ### Can I use an IDE like Eclipse or IntelliJ to write my program?
-Yes, you can use what ever tools you want - as long as your run.sh script correctly runs the relevant target files and creates the `flagged_purchases.json` files in the `log_output` directory.
+Yes, you can use what ever tools you want - as long as your run.sh script correctly runs the relevant target files and creates the `flagged_purchases.json` file in the `log_output` directory.
 
 ### What should be in the log_input directory?
 You can put any text file you want in the directory since our testing suite will replace it. Indeed, using your own input files would be quite useful for testing. The file size limit on Github is 100 MB so you won't be able to include the provided sample input files in your log_input directory.
