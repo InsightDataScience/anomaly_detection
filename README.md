@@ -195,17 +195,14 @@ No, your solution doesn't necessarily need to include multi-threading - there ar
 ### What should the format of the output be?
 In order to be tested correctly, you must use the format described above. You can ensure that you have the correct format by using the testing suite we've included. If you are still unable to get the correct format from the debugging messages in the suite, please email us at `cc@insightdataengineering.com`.
 
-### How should I handle ties in the data for feature 1-3? Should I list all the hosts/resources, or only 10? If only 10, how do I decide which 10?
-In the event of ties for features, please only list 10 entries, using lexicographical order to sort them.
-
 ### Should I check if the files in the input directory are text files or non-text files(binary)?
 No, for simplicity you may assume that all of the files in the input directory are text files, with the format as described above.
 
 ### Can I use an IDE like Eclipse or IntelliJ to write my program?
-Yes, you can use what ever tools you want - as long as your run.sh script correctly runs the relevant target files and creates the `hosts.txt`, `hours.txt`, `resources.txt`, `blocked.txt` files in the `log_output` directory.
+Yes, you can use what ever tools you want - as long as your run.sh script correctly runs the relevant target files and creates the `flagged_purchases.json` files in the `log_output` directory.
 
 ### What should be in the log_input directory?
-You can put any text file you want in the directory since our testing suite will replace it. Indeed, using your own input files would be quite useful for testing. The file size limit on Github is 100 MB so you won't be able to include the provided input file in your log_input directory.
+You can put any text file you want in the directory since our testing suite will replace it. Indeed, using your own input files would be quite useful for testing. The file size limit on Github is 100 MB so you won't be able to include the provided sample input files in your log_input directory.
 
 ### How will the coding challenge be evaluated?
 Generally, we will evaluate your coding challenge with a testing suite that provides a variety of inputs and checks the corresponding output. This suite will attempt to use your `run.sh` and is fairly tolerant of different runtime environments. Of course, there are many aspects (e.g. clean code, documentation) that cannot be tested by our suite, so each submission will also be reviewed manually by a data engineer.
