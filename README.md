@@ -163,7 +163,7 @@ Your submission must pass at least the provided test in order to pass the coding
 Here are some common questions we've received. If you have additional questions, please email us at `cc@insightdataengineering.com` and we'll answer your questions as quickly as we can (during PST business hours), and update this FAQ.
 
 ### Which Github link should I submit?
-You should submit the URL for the top-level root of your repository. For example, this repo would be submitted by copying the URL `https://github.com/InsightDataScience/fansite-analytics-challenge` into the appropriate field on the application. Do NOT try to submit your coding challenge using a pull request, which would make your source code publicly available.
+You should submit the URL for the top-level root of your repository. For example, this repo would be submitted by copying the URL `https://github.com/InsightDataScience/anomaly_detection` into the appropriate field on the application. Do NOT try to submit your coding challenge using a pull request, which would make your source code publicly available.
 
 ### Do I need a private Github repo?
 No, you may use a public repo, there is no need to purchase a private repo. You may also submit a link to a Bitbucket repo if you prefer.
@@ -172,13 +172,13 @@ No, you may use a public repo, there is no need to purchase a private repo. You 
 It's important that your implementation scales to handle large amounts of data. While many of our Fellows have experience with R and Matlab, applicants have found that these languages are unable to process data in a scalable fashion, so you should consider another language.
 
 ### May I use distributed technologies like Hadoop or Spark?
-While you're welcome to do so, your code will be tested on a single machine so there may not be a significant benefit to using these technologies prior to the program. With that said, learning about distributed systems is a valuable skill for all data engineers.
+Your code will be tested on a single machine so there may not be a significant benefit to using these technologies prior to the program. At this point we're not looking test you knowledge on distributed computing but rather on CS fundamentals and SE best practices. With that said, learning about distributed systems is a valuable skill for all data engineers.
 
 ### What sort of system should I use to run my program on (Windows, Linux, Mac)?
 You may write your solution on any system, but your source code should be portable and work on all systems. Additionally, your run.sh must be able to run on either Unix or Linux, as that's the system that will be used for testing. Linux machines are the industry standard for most data engineering teams, so it is helpful to be familiar with this. If you're currently using Windows, we recommend using tools like Cygwin or Docker, or a free online IDE such as Cloud9.
 
 ### How fast should my program run?
-While there are no strict performance guidelines to this coding challenge, we will take the amount of time your program takes into consideration in grading the challenge. Therefore, you should design and develop your program in the most optimal way. 
+While there are no strict performance guidelines to this coding challenge, we will take the amount of time your program takes into consideration in grading the challenge. Therefore, you should design and develop your program in the most optimal way (think about time and space complexity instead of trying to hit a concrete runtime value). 
 
 ### Can I use pre-built packages, modules, or libraries?
 This coding challenge can be completed without any "exotic" packages. While you may use publicly available packages, modules, or libraries, you must document any dependencies in your accompanying README file. When we review your submission, we will download these libraries and attempt to run your program. If you do use a package, you should always ensure that the module you're using works efficiently for the specific use-case in the challenge, since many libraries are not designed for large amounts of data.
