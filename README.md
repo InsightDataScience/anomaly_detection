@@ -155,7 +155,7 @@ Your submission must pass at least the provided test in order to pass the coding
 * Do NOT attach a file - we will not admit solutions which are attached files 
 * Use the submission box to enter the link to your github repo or bitbucket ONLY
 * Link to the specific repo for this project, not your general repo
-* Put any comments in the RADME File inside your Project repo, not in the submission box
+* Put any comments in the README inside your Project repo, not in the submission box
 * We are unable to accept coding challenges that are emailed to us 
 
 # FAQ
@@ -187,7 +187,7 @@ This coding challenge can be completed without any "exotic" packages. While you 
 This coding challenge can be completed without the use of a database. However, if you must use one, it must be a publicly available one that can be easily installed with minimal configuration.
 
 ### Will you email me if my code doesn't run?
-Unfortunately, we receive hundreds of submissions in a very short time and are unable to email individuals if code doesn't compile or run. This is why it's so important to document any dependencies you have, as described in the previous question. We will do everything we can to properly test your code, but this requires good documentation. More so, we have provided a test suite so you can confirm that your directory structure and format are correct.
+Unfortunately, we receive hundreds of submissions in a very short time and are unable to email individuals if their code doesn't compile or run. This is why it's so important to document any dependencies you have, as described in the previous question. We will do everything we can to properly test your code, but this requires good documentation. More so, we have provided a test suite so you can confirm that your directory structure and format are correct.
 
 ### Do I need to use multi-threading?
 No, your solution doesn't necessarily need to include multi-threading - there are many solutions that don't require multiple threads/cores or any distributed systems, but instead use efficient data structures.
@@ -208,7 +208,7 @@ Yes, you can use what ever tools you want - as long as your run.sh script correc
 You can put any text file you want in the directory since our testing suite will replace it. Indeed, using your own input files would be quite useful for testing. The file size limit on Github is 100 MB so you won't be able to include the provided input file in your log_input directory.
 
 ### How will the coding challenge be evaluated?
-Generally, we will evaluate your coding challenge with a testing suite that provides a variety of inputs and checks the corresponding output. This suite will attempt to use your `run.sh` and is fairly tolerant to different runtime environments. Of course, there are many aspects (e.g. clean code, documentation) that cannot be tested by our suite, so each submission will also be reviewed manually by a data engineer.
+Generally, we will evaluate your coding challenge with a testing suite that provides a variety of inputs and checks the corresponding output. This suite will attempt to use your `run.sh` and is fairly tolerant of different runtime environments. Of course, there are many aspects (e.g. clean code, documentation) that cannot be tested by our suite, so each submission will also be reviewed manually by a data engineer.
 
 ### How long will it take for me to hear back from you about my submission?
 We receive hundreds of submissions and try to evaluate them all in a timely manner. We try to get back to all applicants within two or three weeks of submission, but if you have a specific deadline that requires expedited review, you may email us at `cc@insightdataengineering.com`.
