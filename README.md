@@ -150,12 +150,12 @@ One test has been provided as a way to check your formatting and simulate how we
 Your submission must pass at least the provided test in order to pass the coding challenge.
 
 ## Instructions to Submit your Solution
-* To submit your entry please use the link you receieved in your coding challenge invite email
+* To submit your entry please use the link you received in your coding challenge invite email
 * You will only be able to submit through the link one time 
 * Do NOT attach a file - we will not admit solutions which are attached files 
 * Use the submission box to enter the link to your github repo or bitbucket ONLY
 * Link to the specific repo for this project, not your general repo
-* Put any comments in the README inside your Project repo, not in the submission box
+* Put any comments in the README inside your project repo, not in the submission box
 * We are unable to accept coding challenges that are emailed to us 
 
 # FAQ
