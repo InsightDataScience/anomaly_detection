@@ -67,9 +67,11 @@ e.g., `stream_log.json`:
 ### Output Data
 Write to a file, named `flagged_purchases.json`, all the anomalous purchase events (in their original order). Flagged events are still valid and can contribute to other users' baseline.
 
+
+## TO DO
 e.g., `flagged_purchases.json`:
 
-    {"event_type":"purchase", "timestamp":"2017-06-13 11:33:02", "id": "2", "amount": "1601.83"}
+    {"event_type":"purchase", "timestamp":"2017-06-13 11:33:02", "id": "2", "amount": "1601.83", "mean": "", "sd":""}
 
 ### Sample Data
 You can download a medium sized sample data set here: XXX
