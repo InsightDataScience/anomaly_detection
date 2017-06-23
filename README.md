@@ -31,6 +31,8 @@ For simplicity we can assume that the mean and standard deviation of the purchas
 
 <img src="./images/math.png" width="600">
 
+, where N is the number of purchases and x is the amount.
+
 ### Input Data
 Ideally, the input data would come from a real-time, streaming API, but we don't want this challenge to focus on the relatively uninteresting "DevOps" of connecting to an API.
 
