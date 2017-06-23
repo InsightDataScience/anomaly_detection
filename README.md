@@ -65,13 +65,13 @@ e.g., `stream_log.json`:
     {"event_type":"purchase", "timestamp":"2017-06-13 11:33:02", "id": "2", "amount": "1601.83"}
 
 ### Output Data
-Write to a file, named `flagged_purchases.json`, all the anomalous purchase events (in their original order). Flagged events are still valid and can contribute to other users' baseline.
+Write all the flagged purchase events to a file, named `flagged_purchases.json`, with the extra fields of mean and sd (the order of both the events and the json fields should remain the same as in stream_log.json). Please report the values of mean and sd with truncated to two decimal points e.g. 3.46732 -> 3.46.
 
+Flagged events are still valid and can contribute to other users' baseline.
 
-## TO DO
 e.g., `flagged_purchases.json`:
 
-    {"event_type":"purchase", "timestamp":"2017-06-13 11:33:02", "id": "2", "amount": "1601.83", "flag": "1", mean": "29.10", "sd": "21.46"}
+    {"event_type":"purchase", "timestamp":"2017-06-13 11:33:02", "id": "2", "amount": "1601.83", mean": "29.10", "sd": "21.46"}
 
 ### Sample Data
 You can download a medium sized sample data set here: XXX
