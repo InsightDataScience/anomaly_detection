@@ -29,7 +29,7 @@ T >= 2: the last T purchases are the T purchases in the user's network (not incl
 
 For simplicity we can assume that the mean and standard deviation of the purchase amounts can be calculated based on the formulas below:
 
-![](./images/math.png){:height="50%" width="50%"}
+![](./images/math.png | width=200)
 
 ### Input Data
 Ideally, the input data would come from a real-time, streaming API, but we don't want this challenge to focus on the relatively uninteresting "DevOps" of connecting to an API.
