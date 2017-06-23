@@ -71,7 +71,7 @@ Write to a file, named `flagged_purchases.json`, all the anomalous purchase even
 ## TO DO
 e.g., `flagged_purchases.json`:
 
-    {"event_type":"purchase", "timestamp":"2017-06-13 11:33:02", "id": "2", "amount": "1601.83", "mean": "", "sd":""}
+    {"event_type":"purchase", "timestamp":"2017-06-13 11:33:02", "id": "2", "amount": "1601.83", "flag": "1", mean": "29.10", "sd": "21.46"}
 
 ### Sample Data
 You can download a medium sized sample data set here: XXX
