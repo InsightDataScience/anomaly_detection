@@ -29,7 +29,7 @@ T >= 2: the last T purchases are the T purchases in the user's network (not incl
 
 For simplicity we can assume that the mean and standard deviation of the purchase amounts can be calculated based on the formulas below:
 
-<img src="./images/math.png" width="600">
+<img src="./images/math.png" width="500">
 
 where N is the number of purchases and x is the amount.
 
