@@ -89,6 +89,7 @@ function run_all_tests {
     compare_outputs
   done
 
+  echo "[$(date)] ${PASS_CNT} of ${NUM_TESTS} tests passed"
   echo "[$(date)] ${PASS_CNT} of ${NUM_TESTS} tests passed" >> ${GRADER_ROOT}/results.txt
 }
 
