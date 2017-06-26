@@ -74,7 +74,7 @@ function compare_outputs {
 
 function run_all_tests {
   TEST_FOLDERS=$(ls ${GRADER_ROOT}/tests)
-  NUM_TESTS=$(($(echo $(echo ${TEST_FOLDERS} | wc -w)) * 3))
+  NUM_TESTS=$(($(echo $(echo ${TEST_FOLDERS} | wc -w))))
   PASS_CNT=0
 
   # Loop through all tests
