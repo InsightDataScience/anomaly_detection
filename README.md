@@ -75,7 +75,7 @@ e.g., `flagged_purchases.json`:
     {"event_type":"purchase", "timestamp":"2017-06-13 11:33:02", "id": "2", "amount": "1601.83", mean": "29.10", "sd": "21.46"}
 
 ### Sample Data
-You can download a medium sized sample data set here: XXX
+You can find a medium sized sample data set in the sample_dataset folder.
 
 ### Optional Features
 Feel free to implement additional features that might be useful to derive further metrics or prevent harmful activity. These features will be considered as bonus while evaluating your submission. If you choose to add extras please document them in your `README` and make sure that they don't interfere with the core feature (e.g. don't alter the output of flagged_purchases.json).
