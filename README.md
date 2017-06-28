@@ -49,19 +49,19 @@ For this challenge, you'll need two flexible parameters
 
 A purchase amount is anomalous if it's more than 3 standard deviations from the mean of the last `T` purchases in the user's `D`th degree social network. As an expression, an anomalous amount is anything greater than `mean + (3 * sd)` where `sd` stands for standard deviation (see the FAQ for the mean and standard deviation). 
 
-###Number of degrees in social network (`D`)
+### Number of degrees in social network (`D`)
  
 `D` should not be hardcoded, and will be at least `1`.
 
 A value of `1` means you should only consider the friends of the user. A value of `2` means the social network extends to friends and "friends of friends".
 
-For example, if `D = 1`, User A's social network would only consist of User B and User C` but not User D.
+For example, if `D = 1`, User A's social network would only consist of User B and User C but not User D.
 
 If `D = 2`, User A's social network would consist of User B, User C, and User D.
 
-###Tracked number of purchases in the user's network (`T`)
+### Tracked number of purchases in the user's network (`T`)
 
-Now that we've defined what constitutes a user's social network, we can move on to `T`, which also should not be hardcoded.
+Now that we've defined what constitutes a user's social network, we can move on to `T`.
 
 `T` also shouldn't be hardcoded, and will be at least `2`.
 
@@ -69,7 +69,7 @@ The latest purchase has the highest timestamp. If two purchases have the same ti
 
 If a user's social network has made fewer than two purchases, we do not have enough information, and so, no purchases at that point should be flagged as anomalous. 
 
-If a user's social network has made two or more purchases but less than `T`, we should still proceed as if there were `T` purchases.
+If a user's social network has made two or more purchases but less than `T`, we should still proceed.
 
 
 ### Input Data
@@ -79,7 +79,7 @@ As a result, you may assume that the purchases and social network events have al
 
 The first file, `batch_log.json`, contains past data that should be used to build the initial state of the entire user network, as well as the purchase history of the users.
 
-Data in the second file, `stream_log.json`, should be used to determine whether a purchase is anomalous. If a purchase is flagged anomalous the whole json record should be logged in the `flagged_purchases.json` file. As events come in, both the social network and the purchase history of users get updated.
+Data in the second file, `stream_log.json`, should be used to determine whether a purchase is anomalous. If a purchase is flagged anomalous it should be logged in the `flagged_purchases.json` file. As events come in, both the social network and the purchase history of users get updated.
 
 The first line of `batch_log.json` contains a json object with the degree (`D`) and number of purchases (`T`) to consider for the calculation.
 The rest of the events both in `batch_log.json` and in `stream_log.json` fall into to following 3 categories:
