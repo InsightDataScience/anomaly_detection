@@ -24,7 +24,7 @@ A Product Manager at Market-ter approaches you with a new idea to encourage user
 
 "If User A makes a large purchase, User B and User C will see it and be influenced by it. We could highlight these large purchases in their "feed", and even send an email to User D, recommending that they become friends with User A. They won't find these emails annoying because they share the mutual friend, User C. This would encourage User D to make more purchases.
 
-But we can't send our users too many emails, so we should only do this with really high purchases - those that are 3 standard deviations above the average within their social network. These emails will ensure that our top spenders are the most connected and influential!"
+But we can't send our users too many emails, so we should only do this with really high purchases that are considered "anomalies" - those that are 3 standard deviations above the average within their social network. These emails will ensure that our top spenders are the most connected and influential!"
 
 Despite the excitement, you realize the Product Manager hasn't fully thought out two specific aspects of the problem:
 
