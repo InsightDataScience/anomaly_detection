@@ -108,7 +108,7 @@ Flagged events are still valid, and can contribute to the baseline for the socia
 
 An example output in `flagged_purchases.json` could be:
 
-    {"event_type":"purchase", "timestamp":"2017-06-13 11:33:02", "id": "2", "amount": "1601.83", mean": "29.10", "sd": "21.46"}
+    {"event_type":"purchase", "timestamp":"2017-06-13 11:33:02", "id": "2", "amount": "1601.83", "mean": "29.10", "sd": "21.46"}
 
 ### Sample Data
 You can find a medium sized sample data set in the `sample_dataset` folder.
