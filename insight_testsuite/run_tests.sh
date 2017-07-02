@@ -60,13 +60,13 @@ function compare_outputs {
   TEST_ANSWER_PATH1=${GRADER_ROOT}/tests/${test_folder}/log_output/flagged_purchases.json
   
 
-  DIFF_RESULT1=$(diff -bB ${PROJECT_ANSWER_PATH1} ${TEST_ANSWER_PATH1} | wc -l)
+  DIFF_RESULT1=$(diff -wubB ${PROJECT_ANSWER_PATH1} ${TEST_ANSWER_PATH1} | wc -l)
   if [ "${DIFF_RESULT1}" -eq "0" ] && [ -f ${PROJECT_ANSWER_PATH1} ]; then
     echo -e "[${color_green}PASS${color_norm}]: ${test_folder}"
     PASS_CNT=$(($PASS_CNT+1))
   else
     echo -e "[${color_red}FAIL${color_norm}]: ${test_folder}"
-    diff ${PROJECT_ANSWER_PATH1} ${TEST_ANSWER_PATH1}
+    diff -wubB ${PROJECT_ANSWER_PATH1} ${TEST_ANSWER_PATH1}
   fi
 
  
