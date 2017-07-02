@@ -67,7 +67,7 @@ The latest purchase is the one with the highest timestamp. If 2 purchases have t
 
 If a user's social network has less than 2 purchases, we don't have enough historical information, so no purchases should be considered anomalous at that point. 
 
-If a user's social network has made 2 or more purchases, but less than `T`, we should still proceed with the calucations to determine if the purchases are anomalous.
+If a user's social network has made 2 or more purchases, but less than `T`, we should still proceed with the calcuations to determine if the purchases are anomalous.
 
 
 ### Input Data
@@ -155,7 +155,8 @@ The directory structure for your repo should look like this:
             |   │   └── flagged_purchases.json
             ├── your-own-test
                 ├── log_input
-                │   └── your-own-log.txt
+                │   └── batch_log.json
+                │   └── stream_log.json
                 |__ log_output
                     └── flagged_purchases.json
 
